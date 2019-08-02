@@ -348,6 +348,9 @@ client.on("message", (message) => {
 	if(mess === 'ping'){
 		message.reply(` pong`);
 	}
+	if(mess === 'pong'){
+		message.reply(` ping`);
+	}
 	
 	
 	for (i = 0; i < itemNumbers; i++){
