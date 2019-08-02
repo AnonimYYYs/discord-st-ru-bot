@@ -333,112 +333,15 @@ function master(worker, lv, num){
 }
 
 
-
 client.on('message', message => {
-    mess = message.content.toString().toLocaleLowerCase();
-    for (i = 0; i < itemNumbers; i++){
+	mess = message.content.toString().toLocaleLowerCase();
+	for (i = 0; i < itemNumbers; i++){
 		if (mess.indexOf(itemNames[i].toLocaleLowerCase()) == 0) {
-			k = i + 1;
-//			itemsDB.query("SELECT * FROM full_items WHERE id = ?", k, function(err, line) {
-//				if(err) {
-//					message.reply(`Ошибка сервера, мускулы не в порядке`);
-//				} else {
-					if(mess.indexOf("инфо") != -1){
-                         message.reply(`
-                        Инфо, в процессе `);
-                        /*-----------------
-						message.reply(`
-							инфо '${line[0].name}'
-							Тип предмета: ${line[0].type}
-							Тир: ${line[0].tier}
-							Способ открытия: ${line[0].unlock}
-							Свитки исследования: ${line[0].scrolls}
-							Стоимость: ${line[0].price}
-							Время создания: ${Math.floor(parseInt(line[0].time_sec) / 3600)}:${Math.floor((parseInt(line[0].time_sec) % 3600) / 60)}:${parseInt(line[0].time_sec) % 60}
-							Стоимость/Время: ${(line[0].price/line[0].time_sec).toFixed(2)}
-							Опыт создания: ${line[0].work_xp}
-							Опыт торговца: ${line[0].merch_xp}
-							${master(line[0].worker_1, line[0].lv_worker_1, 1)} ${master(line[0].worker_2, line[0].lv_worker_2, 2)}
-							`
-						);
-                        ------------------ */
-					} else if(mess.indexOf("ресурсы") != -1){
-                         message.reply(`
-                        Ресурсы, в процессе `);
-                        /* ---------------------------
-						message.reply(`
-							ресурсы '${line[0].name}'	
-							Железо: ${line[0].iron_t1}
-							Дерево: ${line[0].wood_t1}
-							Кожа: ${line[0].leather_t1}
-							Травы: ${line[0].leaf_t1}
-							Сталь: ${line[0].steel_t2}
-							Железное дерево: ${line[0].wood_t2}
-							Ткань: ${line[0].leather_t2}
-							Масло: ${line[0].oil_t2}
-
-							${materials(line[0].precraft_1.toString(), line[0].quality_1.toString(), line[0].amount_1, 1)}
-							${materials(line[0].precraft_2.toString(), line[0].quality_2.toString(), line[0].amount_2, 2)}`
-						); 
-                        -------------------------- */
-					} else if(mess.indexOf("энергия") != -1){
-                         message.reply(`
-                        Энергия, в процессе `);
-						/* --------------------------
-                        message.reply(`
-						Энергия '${line[0].name}'
-						Скидка: +${line[0].enrg_discount}  
-						Наценка: -${line[0].enrg_surcharge}  
-						Ускорение крафта: -${line[0].enrg_speed} 
-						Замена: -${line[0].enrg_suggest} `
-						);
-                        ----------------------------- */
-					} else if(mess.indexOf("улучшение") != -1){
-                         message.reply(`
-                        Улучшение, в процессе `);
-						/* ------------------------
-                        message.reply(`
-							Улучшение '${line[0].name}'
-
-							Ориентиры:
-							  Сделано ${line[0].needed_1}шт: ${line[0].progress_1}
-							  Сделано ${line[0].needed_2}шт: ${line[0].progress_2}
-							  Сделано ${line[0].needed_3}шт: ${line[0].progress_3}
-							  Сделано ${line[0].needed_4}шт: ${line[0].progress_4}
-							  Сделано ${line[0].needed_5}шт: ${line[0].progress_5}
-							
-							Усиление:
-							  1 звезда: ${line[0].star_1}, ${line[0].star_scrolls_1} свитков
-							  2 звезды: ${line[0].star_2}, ${line[0].star_scrolls_2} свитков
-							  3 звезды: ${line[0].star_3}, ${line[0].star_scrolls_3} свитков`
-						);
-                        -------------------------- */
-					} else { 
-                        message.reply(`
-                        Помощь, в процессе `);
-                        /* --------------------------
-						message.reply(`
-						Доступные команды
-						
-						Общая информация о предмете:
-						   '${line[0].name} инфо'
-						   
-						Необходимые ресурсы:
-						   '${line[0].name} ресурсы'  
-						   
-						Затраты энергии:
-						   '${line[0].name} энергия'
-						   
-						Улучшение рецепта:
-						   '${line[0].name} улучшение'  `
-						); ----------------------------- */
-					}
-					
-//				};
-//			});
-			break;
+			message.reply(`
+			Бот в процессе :3`);
 		}
 	}
+	
 });
 
 client.login(process.env.BOT_TOKEN);
