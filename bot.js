@@ -345,6 +345,11 @@ function master(worker, lv, num){
 client.on("message", (message) => {
 	mess = message.content.toString().toLocaleLowerCase();
 	
+	if(mess === 'ping'){
+		message.reply(` pong`);
+	}
+	
+	
 	for (i = 0; i < itemNumbers; i++){
 		if (mess.indexOf(itemNames[i].toLocaleLowerCase()) == 0) {
 			k = i + 1;
