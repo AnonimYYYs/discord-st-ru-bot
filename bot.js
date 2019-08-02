@@ -10,6 +10,7 @@ var itemsDB = mysql.createConnection({
 	password: '6ce526cb',
 	database: 'heroku_706f58054ac3d91'
 });
+
 var itemNumbers = 214; //TODO id=121+ изменить названия, убрать пробелы  
 var itemNames = [
 	'Меч Сквайра',
@@ -341,6 +342,12 @@ function master(worker, lv, num){
 
 itemsDB.connect();
 console.log("DB is connected...");
+if(itemsDB.state === 'disconnected'){
+	itemsDB.connect();
+	console.log("DB is connected again...");
+} else {
+	console.log("DB is connected firstly");
+}
 
 
 client.on("message", (message) => {
@@ -349,6 +356,10 @@ client.on("message", (message) => {
 	for (i = 0; i < itemNumbers; i++){
 		if (mess.indexOf(itemNames[i].toLocaleLowerCase()) == 0) {
 			k = i + 1;
+			if(itemsDB.state === 'disconnected'){
+				itemsDB.connect();
+				console.log("DB is connected again...");
+			}
 			itemsDB.query("SELECT * FROM heroku_706f58054ac3d91.full_items WHERE id = ?", k, function(err, line) {
 				if(err) {
 					message.reply(`Ошибка сервера, мускулы не в порядке`);
@@ -456,6 +467,10 @@ client.on("message", (message) => {
 				tier = 7;
 			};
 			if(tier != 0){
+				if(itemsDB.state === 'disconnected'){
+					itemsDB.connect();
+					console.log("DB is connected again...");
+				}
 				itemsDB.query("SELECT name FROM heroku_706f58054ac3d91.full_items WHERE type = ? AND tier = ?", [typeNames[i], tier], function(err, line){					
 					message.reply(`
 						т${tier} ${typeNames[i].toLocaleLowerCase()}: ${line[0].name.toString()}`
