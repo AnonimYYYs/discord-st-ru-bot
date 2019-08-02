@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-var itemNumbers = 215; //TODO id=121+ изменить названия, убрать пробелы  
+var itemNumbers = 214; //TODO id=121+ изменить названия, убрать пробелы  
 var itemNames = ['Меч Сквайра',
 	'Рыцарский Меч',
 	'Гладиус',
