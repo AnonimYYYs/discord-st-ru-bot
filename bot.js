@@ -68,5 +68,5 @@ var mess = '';
 				} else {
 					console.log(line[0].name);
 				}
-			};
+			});
 					
