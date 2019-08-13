@@ -11,7 +11,7 @@ var itemsDB = mysql.createPool({
 	password: '6ce526cb',
 	database: 'heroku_706f58054ac3d91'
 });
-var itemNumbers = 214; //TODO id=121+ изменить названия, убрать пробелы  
+var itemNumbers = 218;  
 var itemNames = [
 	'Меч Сквайра',
 	'Рыцарский Меч',
@@ -23,6 +23,7 @@ var itemNames = [
 	'Топор Дровосека',
 	'Секира',
 	'Железный Колун',
+	'Топор Исследователя',
 	'Бердыш',
 	'Томагавк',
 	'Боевой Топор',
