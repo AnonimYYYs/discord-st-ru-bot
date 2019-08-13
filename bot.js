@@ -11,7 +11,7 @@ var itemsDB = mysql.createPool({
 	password: '6ce526cb',
 	database: 'heroku_706f58054ac3d91'
 });
-var itemNumbers = 218;  
+var itemNumbers = 219;  
 var itemNames = [
 	'Меч Сквайра',
 	'Рыцарский Меч',
@@ -129,6 +129,7 @@ var itemNames = [
 	'Мантия друида',
 	'Мантия ученика',
 	'Туника ученого',
+	'Наряд Исследователя',
 	'Наряд колдуна',
 	'Полночное одеяние',
 	'Прочный шлем',
