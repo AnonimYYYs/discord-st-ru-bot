@@ -11,7 +11,7 @@ var itemsDB = mysql.createPool({
 	password: '6ce526cb',
 	database: 'heroku_706f58054ac3d91'
 });
-var itemNumbers = 219;  
+var itemNumbers = 220;  
 var itemNames = [
 	'Меч Сквайра',
 	'Рыцарский Меч',
@@ -155,6 +155,7 @@ var itemNames = [
 	'Шляпа чародея',
 	'Шляпа колдуна',
 	'Шляпа тактика',
+	'Шляпа Призывателя',
 	'Железные наручи',
 	'Латные рукавицы',
 	'Рукавицы воина',
